@@ -1,4 +1,4 @@
-# Deploying Customizable Applciations using Deis Contoller API from a Docker Registry
+# Deploying Customizable Applications using Deis Contoller API from a Docker Registry
 
 Although one of the best things about [Deis]() is the fact that you can deploy your apps using the developer-friendly `git push` Deis also supports deploying apps from Docker images hosted by docker registry server.
 
@@ -31,7 +31,7 @@ docker push <your_dockerhub_username>/simple-node:latest
 
 ## Run the Example
 
-To run the final example in this repo, modify [./config.json](./config.json) with your speicifc values:
+To run the final example in this repo, modify [./config.json](./config.json) with your specific values:
 
 ```json
 {
@@ -51,7 +51,7 @@ node app.js
 ? Please specify the maximum memory allocated to the instance: 512M
 ? Please specify the maximum cpu time allocated to the instance: 256
 creating app: sprockets-co
-sucessfully logged into deis
+successfully logged into deis
 { uuid: 'e7423cef-791d-435e-9e6a-63e67b9a28e7',
   id: 'sprockets-co',
   owner: 'sedouard',
@@ -71,7 +71,7 @@ sucessfully set deployment-specific variables
   created: '2015-05-20T16:59:25UTC',
   updated: '2015-05-20T16:59:25UTC',
   uuid: '37a70f80-12ef-4501-b0e3-d7359054406d' }
-sucessfully deployed node.js application
+successfully deployed node.js application
 ```
 
 You should have output similar to above with the name of your deis url, username and image name differing slightly. Browse to the deployed application URL and you'll see that we have an application with the `ORGANIZATION_NAM` name set to `Sprockets Co.` and the `BG_COLOR` set to `Green`:
@@ -147,7 +147,7 @@ client.config.set = RSVP.denodeify(client.config.set);
 
 Now that we have all of our information needed to call the api we'll go ahead and call the api wrapper functions, remember this uses a plain old REST API hosted by your deis cluster so you can do this from any language:
 
-### Autenticate
+### Authenticate
 
 Authentication is easy and this is the equivalent as doing `deis login` on teh cluster.
 
@@ -181,7 +181,7 @@ Now we'll use the questions from the user of the example deployer application to
   // this could be things such as the organization's name
   .then(function(results) {
     console.dir(results);
-    console.log('sucessfuly created app: ' + answers.appName);
+    console.log('successfully created app: ' + answers.appName);
     console.log('setting deployment specific variables');
     return client.config.set(results.id, { 
         ORGANIZATION_NAME: answers.orgName, 
@@ -194,7 +194,7 @@ Now we'll use the questions from the user of the example deployer application to
   })
 ```
 
-Notice how we're setting the enviroment variables `ORGANIZATION_NAME` as well as `BG_COLOR` to the variables collected from the user of this example app. This data however can come from a database, a json file, or anywhere else for your specific usecase.
+Notice how we're setting the environment variables `ORGANIZATION_NAME` as well as `BG_COLOR` to the variables collected from the user of this example app. This data however can come from a database, a json file, or anywhere else for your specific use case.
 
 Also one handy thing that comes from Docker is the ability to constrain the containers memory and cpu allocation which Deis takes advantage of. You can set your applications memory and cpu usage allow you to easily offer different levels of service for each application. For example you can set these values low for Free (as in, free beer) instances however you might think about charging users for apps with higher compute allocation.
 
@@ -204,15 +204,13 @@ Finally to deploy the image, (in our case, our registry is the docker hub) we si
 
 ```js
   .then(function(){
-    console.log('sucessfully set deployment-specific variables');
+    console.log('successfully set deployment-specific variables');
     return client.builds.create(answers.appName, nconf.get('docker_hub_username') + '/simple-node:latest');
   })
   .then(function(results) { 
     console.dir(results);
-    return console.log('sucessfully deployed node.js application');
+    return console.log('successfully deployed node.js application');
   })
 ```
 
-Now after a couple minutes (this application specifically deploys its npm packages on startup) you should see your customized app:
-
-
+Now after a couple minutes (this application specifically deploys its npm packages on startup) you should see your customized app.
