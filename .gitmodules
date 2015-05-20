@@ -1,0 +1,3 @@
+[submodule "deis-api-app"]
+	path = deis-api-app
+	url = https://github.com/sedouard/deis-api-app

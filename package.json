@@ -1,0 +1,17 @@
+{
+  "name": "deployer",
+  "version": "1.0.0",
+  "description": "An example using deis controller api to deploy customaizable applciation instances",
+  "main": "app.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "deis-api": "0.0.15",
+    "inquirer": "^0.8.4",
+    "nconf": "^0.7.1",
+    "rsvp": "^3.0.18"
+  }
+}
