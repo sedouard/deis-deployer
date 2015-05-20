@@ -48,14 +48,14 @@ inquirer.prompt([{
   // authenticate
   client.auth.login()
   .then(function() {
-    console.log('sucessfully logged into deis');
+    console.log('successfully logged into deis');
     return client.apps.create(appName);
   })
   // setup instance-specific environment variables
   // this could be things such as the organization's name
   .then(function(results) {
     console.dir(results);
-    console.log('sucessfuly created app: ' + answers.appName);
+    console.log('successfully created app: ' + answers.appName);
     console.log('setting deployment specific variables');
     return client.config.set(results.id, { 
         ORGANIZATION_NAME: answers.orgName, 
@@ -67,12 +67,12 @@ inquirer.prompt([{
       });
   })
   .then(function(){
-    console.log('sucessfully set deployment-specific variables');
+    console.log('successfully set deployment-specific variables');
     return client.builds.create(answers.appName, nconf.get('docker_hub_username') + '/simple-node:latest');
   })
   .then(function(results) { 
     console.dir(results);
-    return console.log('sucessfully deployed node.js application');
+    return console.log('successfully deployed node.js application');
   })
   .catch(function(err) {
     console.dir(err);
