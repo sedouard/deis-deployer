@@ -104,7 +104,7 @@ var client = new DeisAPI({
 });
 ```
 
-We'll use the [Inquirer](http://npmjs.com/inquirer) module to extact a few command-line parameters like the **Organization Name**, **Background Color** and cpu & memory limits of the application. In a real-world integration you may replace this with a configuration from your database for the specific user or organization you're hosting the app for.
+We'll use the [Inquirer](http://npmjs.com/inquirer) module to extract a few command-line parameters like the **Organization Name**, **Background Color** and cpu & memory limits of the application. In a real-world integration you may replace this with a configuration from your database for the specific user or organization you're hosting the app for.
 
 ```js
 inquirer.prompt([{
