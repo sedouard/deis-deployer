@@ -213,4 +213,4 @@ Finally to deploy the image, (in our case, our registry is the docker hub) we si
   })
 ```
 
-Now after a couple minutes (this application specifically deploys its npm packages on startup) you should see your customized app.
+Now after a couple minutes (this application specifically deploys its npm packages on startup) you should see your customized app at the application url specified by deis.
