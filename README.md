@@ -35,10 +35,10 @@ To run the final example in this repo, modify [./config.json](./config.json) wit
 
 ```json
 {
-    "deis_host": "deis.captainkaption.com",
-    "deis_user": "sedouard",
-    "deis_password": "051589",
-    "docker_hub_username": "sedouard"
+    "deis_host": "deis.<yourdomain>.com",
+    "deis_user": "<your deis cluster username>",
+    "deis_password": "<your deis cluster password>",
+    "docker_hub_username": "your dockerhub username"
 }
 ```
 
