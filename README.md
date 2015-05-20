@@ -86,7 +86,7 @@ Remember these specific values demonstrate how you can do interesting things suc
 
 ## Deis Controller API Walk-through
 
-We want to use the Deis Controller API because we want the ability to plug the power of deis apps to any existing infrastrcutreu we have.
+We want to use the Deis Controller API because we want the ability to plug the power of deis apps to any existing infrastructure we have.
 
 For example - if you have a company that hosts an app for people such as [Wordpress.com](http://wordpress.com), [Drupal](http://drupal.com) or [DemocracyOS](http://democracyos.com) this would be super useful to plug into your user-facing application.
 
