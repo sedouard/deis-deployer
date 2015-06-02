@@ -153,10 +153,10 @@ Authentication is easy and this is the equivalent as doing `deis login` on teh c
 
 ```js
 console.log('creating app: ' + answers.appName);
-  var appName = answers.appName;
+var appName = answers.appName;
 
-  // authenticate
-  client.auth.login()
+// authenticate
+client.auth.login()
 ```
 
 ### Create the App
